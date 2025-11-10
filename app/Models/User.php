@@ -10,14 +10,8 @@ use Illuminate\Support\Str;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
     protected $fillable = [
         'user_token',
         'first_name',
@@ -30,21 +24,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'date_of_birth',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [
@@ -54,17 +38,11 @@ class User extends Authenticatable implements MustVerifyEmail
         ];
     }
 
-    /**
-     * Get the user's full name.
-     */
     public function getFullNameAttribute(): string
     {
         return "{$this->first_name} {$this->last_name}";
     }
 
-    /**
-     * Boot function to generate user token automatically
-     */
     protected static function boot()
     {
         parent::boot();
@@ -76,13 +54,9 @@ class User extends Authenticatable implements MustVerifyEmail
         });
     }
 
-    /**
-     * Generate a unique 10-15 character token
-     */
     private static function generateUniqueToken(): string
     {
         do {
-            // Generiere einen 12-stelligen alphanumerischen Token (Großbuchstaben und Zahlen)
             $token = strtoupper(Str::random(12));
         } while (self::where('user_token', $token)->exists());
 

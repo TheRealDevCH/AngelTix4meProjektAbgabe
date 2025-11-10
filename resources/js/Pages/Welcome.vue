@@ -3,6 +3,7 @@ import { ref, computed } from 'vue';
 import { Head, Link, usePage } from '@inertiajs/vue3';
 import HelpButton from '@/Components/HelpButton.vue';
 import CookieBanner from '@/Components/CookieBanner.vue';
+import NewsletterPopup from '@/Components/NewsletterPopup.vue';
 
 const page = usePage();
 const user = computed(() => page.props.auth?.user);
@@ -214,6 +215,7 @@ const helpSteps = [
 
         <HelpButton :steps="helpSteps" title="Tix4me Hilfe" />
         <CookieBanner />
+        <NewsletterPopup />
     </div>
 </template>
 
