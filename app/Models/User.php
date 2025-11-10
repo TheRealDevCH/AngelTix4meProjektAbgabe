@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -18,6 +19,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var list<string>
      */
     protected $fillable = [
+        'user_token',
         'first_name',
         'last_name',
         'email',
@@ -58,5 +60,32 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getFullNameAttribute(): string
     {
         return "{$this->first_name} {$this->last_name}";
+    }
+
+    /**
+     * Boot function to generate user token automatically
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+            if (empty($user->user_token)) {
+                $user->user_token = self::generateUniqueToken();
+            }
+        });
+    }
+
+    /**
+     * Generate a unique 10-15 character token
+     */
+    private static function generateUniqueToken(): string
+    {
+        do {
+            // Generiere einen 12-stelligen alphanumerischen Token (Großbuchstaben und Zahlen)
+            $token = strtoupper(Str::random(12));
+        } while (self::where('user_token', $token)->exists());
+
+        return $token;
     }
 }
