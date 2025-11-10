@@ -42,7 +42,68 @@ const showPasswordConfirmation = ref(false);
 const addressSuggestions = ref([]);
 const showAddressSuggestions = ref(false);
 const isLoadingAddresses = ref(false);
+const emailError = ref('');
+const emailConfirmationError = ref('');
 let addressSearchTimeout = null;
+
+// Liste von Wegwerf-E-Mail-Domains
+const disposableDomains = [
+    '10minutemail.com', '10minutemail.net', 'guerrillamail.com', 'guerrillamail.net',
+    'guerrillamailblock.com', 'sharklasers.com', 'spam4.me', 'grr.la', 'guerrillamail.biz',
+    'guerrillamail.de', 'mailinator.com', 'trashmail.com', 'tempmail.com', 'temp-mail.org',
+    'throwaway.email', 'yopmail.com', 'maildrop.cc', 'getnada.com', 'fakeinbox.com',
+    'dispostable.com', 'throwawaymail.com', 'tempinbox.com', 'mohmal.com', 'mytemp.email',
+    'emailondeck.com'
+];
+
+// Bekannte E-Mail-Anbieter
+const knownProviders = [
+    'gmail.com', 'googlemail.com', 'outlook.com', 'hotmail.com', 'live.com', 'yahoo.com',
+    'bluewin.ch', 'gmx.ch', 'gmx.de', 'gmx.net', 'web.de', 'icloud.com', 'me.com',
+    'protonmail.com', 'proton.me', 'aol.com', 'mail.com', 'zoho.com'
+];
+
+const validateEmail = (email) => {
+    if (!email) {
+        return '';
+    }
+
+    // Prüfe E-Mail-Format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return 'Bitte gib eine gültige E-Mail-Adresse ein (z.B. name@beispiel.de)';
+    }
+
+    // Extrahiere Domain
+    const domain = email.split('@')[1]?.toLowerCase();
+    if (!domain) {
+        return 'Bitte gib eine gültige E-Mail-Adresse ein';
+    }
+
+    // Prüfe auf Wegwerf-E-Mail
+    if (disposableDomains.includes(domain)) {
+        return 'Bitte verwende eine echte E-Mail-Adresse. Wegwerf-E-Mail-Adressen sind nicht erlaubt. Nutze eine Adresse von einem bekannten Anbieter wie Gmail, Outlook, Bluewin, GMX, etc.';
+    }
+
+    return '';
+};
+
+const checkEmail = () => {
+    emailError.value = validateEmail(form.email);
+};
+
+const checkEmailConfirmation = () => {
+    if (!form.email_confirmation) {
+        emailConfirmationError.value = '';
+        return;
+    }
+
+    if (form.email !== form.email_confirmation) {
+        emailConfirmationError.value = 'Die E-Mail-Adressen stimmen nicht überein. Bitte stelle sicher, dass beide Felder identisch sind.';
+    } else {
+        emailConfirmationError.value = '';
+    }
+};
 
 const searchAddress = async () => {
     const query = form.address;
@@ -272,10 +333,15 @@ const submit = () => {
                         type="email"
                         class="mt-1 block w-full transition-all duration-200 focus:scale-[1.01]"
                         v-model="form.email"
+                        @blur="checkEmail"
+                        @input="checkEmail"
                         required
                         autocomplete="email"
                     />
-                    <InputError class="mt-2" :message="form.errors.email" />
+                    <InputError class="mt-2" :message="emailError || form.errors.email" />
+                    <p v-if="!emailError && !form.errors.email" class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                        Verwende eine echte E-Mail-Adresse von einem bekannten Anbieter (z.B. Gmail, Outlook, Bluewin, GMX)
+                    </p>
                 </div>
 
                 <div>
@@ -285,10 +351,15 @@ const submit = () => {
                         type="email"
                         class="mt-1 block w-full transition-all duration-200 focus:scale-[1.01]"
                         v-model="form.email_confirmation"
+                        @blur="checkEmailConfirmation"
+                        @input="checkEmailConfirmation"
                         required
                         autocomplete="email"
                     />
-                    <InputError class="mt-2" :message="form.errors.email_confirmation" />
+                    <InputError class="mt-2" :message="emailConfirmationError || form.errors.email_confirmation" />
+                    <p v-if="!emailConfirmationError && !form.errors.email_confirmation && form.email_confirmation" class="mt-2 text-sm text-green-600 dark:text-green-400">
+                        ✓ E-Mail-Adressen stimmen überein
+                    </p>
                 </div>
             </div>
 
