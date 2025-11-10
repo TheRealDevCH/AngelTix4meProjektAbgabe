@@ -20,25 +20,25 @@
 
 ## Über das Projekt
 
-Hey Angel, hier ist also das Projekt, von dem ich dir erzählt habe! Tix4me soll mal ein Ticketing-System für Grenchen werden. Die Idee kam mir, als ich gemerkt habe, dass es hier keine richtig gute lokale Lösung für Events gibt. Also dachte ich mir, ich bau einfach selbst eine.
+Also, Tix4me soll mal ein Ticketing-System für Grenchen werden. Hab mir gedacht es wär cool wenn die Stadt was eigenes hätte für lokale Events. Hab das ganze mit Angel besprochen und dann einfach mal angefangen.
 
-Ich muss ehrlich sagen, am Anfang hatte ich ziemlich grosse Pläne. Ich wollte ein komplettes Ticketing-System mit allem Drum und Dran. Aber wie das so ist bei Projekten - man fängt irgendwo an. Deshalb hab ich mich erstmal voll aufs Frontend konzentriert. Das Backend mit der ganzen Event-Verwaltung, Ticketverkauf und Zahlungsabwicklung kommt später. Im Moment siehst du hier also hauptsächlich die Benutzeroberfläche, die Registrierung, das Login-System und all die schönen Design-Elemente, die ich mir ausgedacht hab.
+Am Anfang wollt ich natürlich gleich alles machen - komplettes System mit Ticketverkauf und so. Aber dann hab ich gemerkt das wird zu viel auf einmal. Deswegen hab ich erstmal nur das Frontend gemacht. Das Backend kommt später, im Moment ist halt nur die Oberfläche da, Registrierung, Login und so. Aber immerhin sieht's schonmal gut aus.
 
-### Was hab ich bisher gemacht?
+### Was ist bisher fertig?
 
-Ehrlich gesagt hab ich ziemlich viel Zeit ins Design gesteckt. Ich wollte, dass sich die Seite modern anfühlt, aber gleichzeitig nicht zu kompliziert ist. Gerade für ältere Leute sollte es einfach sein - meine Oma zum Beispiel ist nicht so der Computer-Profi, und ich wollte, dass auch sie damit klarkommt.
+Hab ziemlich viel Zeit ins Design gesteckt muss ich sagen. Wollte das es modern aussieht aber trotzdem einfach zu bedienen ist. Meine Oma kommt mit Computern nicht so klar, und wenn die das versteht dann passts.
 
-Das Registrierungssystem ist schon ziemlich ausgereift. Man kann sich anmelden, bekommt eine Bestätigungsmail, und das ganze Passwort-Zeug funktioniert auch. Ich hab sogar einen Passwort-Generator eingebaut, weil ich selbst immer zu faul bin, mir sichere Passwörter auszudenken. Und die Adresssuche mit OpenStreetMap hab ich auch integriert - funktioniert super, man muss nur anfangen zu tippen und die Vorschläge kommen automatisch.
+Die Registrierung funktioniert schon ganz gut. Man kann sich anmelden, kriegt ne Mail zur Bestätigung, Passwort zurücksetzen geht auch. Hab sogar nen Passwort-Generator eingebaut weil ich selbst immer zu faul bin mir was auszudenken. Die Adresssuche mit OpenStreetMap läuft auch, einfach anfangen zu tippen und es kommen Vorschläge.
 
-Was mir persönlich am besten gefällt, ist das Hilfe-System. Das war eigentlich meine Idee, weil ich gemerkt hab, dass viele Leute bei neuen Webseiten erstmal nicht wissen, wo sie anfangen sollen. Jetzt gibt es diesen kleinen blauen Button unten rechts, und wenn man draufklickt, führt das System einen Schritt für Schritt durch alles. Ich glaube, gerade für die Zielgruppe in Grenchen ist das perfekt.
+Das Hilfe-System find ich persönlich am besten. Hab das mit Angel besprochen weil mir aufgefallen ist das viele Leute nicht wissen wo sie anfangen sollen bei neuen Seiten. Jetzt gibt's unten rechts so nen blauen Button, klickt man drauf wird alles Schritt für Schritt erklärt. Für ältere Leute in Grenchen sicher hilfreich.
 
-Das Design hab ich bewusst hell und freundlich gehalten, mit diesem Glassmorphism-Effekt, den man gerade überall sieht. Sieht einfach gut aus, finde ich. Und natürlich funktioniert alles auch auf dem Handy - das war mir wichtig, weil die meisten Leute heutzutage eh nur noch am Smartphone sind.
+Beim Design hab ich mich für so nen Glassmorphism-Look entschieden, sieht halt modern aus. Und responsive ist alles auch, funktioniert also auf dem Handy genauso. War mir wichtig weil die meisten eh nur noch am Smartphone sind.
 
-### Was kommt noch?
+### Was fehlt noch?
 
-Wie gesagt, das Backend fehlt noch komplett. Also die ganze Logik für Events erstellen, Tickets verkaufen, Zahlungen abwickeln - das kommt alles noch. Im Moment ist es eher eine schöne Hülle, aber die Grundlage steht. Ich hab Laravel als Framework genommen, weil das einfach solide ist und ich damit später gut weiterbauen kann.
+Wie gesagt, Backend fehlt komplett. Also Events erstellen, Tickets verkaufen, Zahlungen - kommt alles noch. Momentan ist es mehr ne schöne Hülle aber die Basis steht. Laravel als Framework war ne gute Wahl denk ich, damit kann ich später gut weitermachen.
 
-Ich arbeite nebenbei daran, wenn ich Zeit hab. Es ist ein bisschen ein Lernprojekt für mich, aber ich zieh es durch. Die Vision ist, dass Grenchen irgendwann seine eigene Ticketing-Plattform hat, wo lokale Veranstalter ihre Events einstellen können und die Leute aus der Region ihre Tickets kaufen können. Von Grenchen für Grenchen eben.
+Arbeite nebenbei dran wenn Zeit ist. Ist auch n bisschen zum Lernen für mich. Die Idee ist halt das Grenchen irgendwann ne eigene Plattform hat wo Veranstalter ihre Events reinstellen können. Von Grenchen für Grenchen halt.
 
 ---
 
@@ -259,14 +259,14 @@ Dieses Projekt ist unter der MIT-Lizenz lizenziert. Siehe [LICENSE](LICENSE) fü
 
 ## Wer steckt dahinter?
 
-Das Projekt hab ich gestartet, weil ich Grenchen eine eigene Ticketing-Lösung geben wollte. Ich arbeite daran, wenn ich Zeit hab. Ist noch ein langer Weg, aber ich bleib dran.
+Hab das Projekt gestartet weil ich dachte Grenchen könnte ne eigene Ticketing-Lösung gebrauchen. Arbeite dran wenn ich Zeit hab. Alles was ich gemacht hab wurde mit Angel abgesprochen, er ist sozusagen mein Ansprechpartner für das Projekt.
 
-Falls du Fragen hast, Ideen einbringen willst oder einfach mal quatschen möchtest über das Projekt, meld dich gerne bei Angel. Er ist meine Ansprechperson für dieses Projekt und kann dir weiterhelfen. Ich freu mich immer über Feedback, gerade weil ich das Ganze ja für die Leute in Grenchen mache.
+Falls jemand Fragen hat oder Ideen einbringen will, am besten bei Angel melden. Freu mich über Feedback, mach das ganze ja für die Leute hier.
 
 **Ansprechperson**: Angel
 **Projekt-Repository**: [https://github.com/TheRealDevCH/AngelTix4meProjektAbgabe](https://github.com/TheRealDevCH/AngelTix4meProjektAbgabe)
 
-Wie gesagt, im Moment ist hauptsächlich das Frontend fertig. Das Backend kommt noch, aber ich arbeite daran. Rom wurde auch nicht an einem Tag erbaut, oder?
+Momentan steht halt nur das Frontend. Backend kommt noch, aber ich bleib dran.
 
 ---
 
