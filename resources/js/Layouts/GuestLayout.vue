@@ -66,7 +66,7 @@ if (localStorage.getItem('darkMode') === 'true') {
             </div>
 
                         <div class="mt-8 text-center">
-                <div class="flex justify-center space-x-6 text-sm mb-6">
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-0 sm:space-x-6 text-xs sm:text-sm mb-6">
                     <Link href="/impressum" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
                         Impressum
                     </Link>
@@ -79,7 +79,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                 </div>
                 <div class="flex justify-center">
                     <a href="https://www.grenchen.ch" target="_blank" rel="noopener noreferrer" class="transition-transform duration-200 hover:scale-105">
-                        <img src="/vongrenchenfuergrenchen.svg?v=2" alt="Von Grenchen für Grenchen" style="height: 4.5rem;" class="w-auto">
+                        <img src="/vongrenchenfuergrenchen.svg?v=2" alt="Von Grenchen für Grenchen" class="h-14 sm:h-16 md:h-20 w-auto">
                     </a>
                 </div>
             </div>
