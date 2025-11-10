@@ -20,25 +20,25 @@
 
 ## Über das Projekt
 
-Hey, schön dass du hier vorbeischaust! Tix4me ist ein Projekt, das Angel und ich zusammen gestartet haben. Die Idee kam uns, als wir über die Event-Szene in Grenchen gesprochen haben und gemerkt haben, dass es keine richtig gute lokale Lösung für Ticketing gibt. Also haben wir beschlossen, selbst eine zu bauen.
+Hey Angel, hier ist also das Projekt, von dem ich dir erzählt habe! Tix4me soll mal ein Ticketing-System für Grenchen werden. Die Idee kam mir, als ich gemerkt habe, dass es hier keine richtig gute lokale Lösung für Events gibt. Also dachte ich mir, ich bau einfach selbst eine.
 
-Ich muss ehrlich sagen, am Anfang hatten wir ziemlich grosse Pläne. Wir wollten ein komplettes Ticketing-System mit allem Drum und Dran. Aber wie das so ist bei Projekten - man fängt irgendwo an. Deshalb haben wir uns erstmal voll aufs Frontend konzentriert. Das Backend mit der ganzen Event-Verwaltung, Ticketverkauf und Zahlungsabwicklung kommt später. Im Moment siehst du hier also hauptsächlich die Benutzeroberfläche, die Registrierung, das Login-System und all die schönen Design-Elemente, die wir uns ausgedacht haben.
+Ich muss ehrlich sagen, am Anfang hatte ich ziemlich grosse Pläne. Ich wollte ein komplettes Ticketing-System mit allem Drum und Dran. Aber wie das so ist bei Projekten - man fängt irgendwo an. Deshalb hab ich mich erstmal voll aufs Frontend konzentriert. Das Backend mit der ganzen Event-Verwaltung, Ticketverkauf und Zahlungsabwicklung kommt später. Im Moment siehst du hier also hauptsächlich die Benutzeroberfläche, die Registrierung, das Login-System und all die schönen Design-Elemente, die ich mir ausgedacht hab.
 
-### Was haben wir bisher gemacht?
+### Was hab ich bisher gemacht?
 
-Ehrlich gesagt haben Angel und ich ziemlich viel Zeit ins Design gesteckt. Wir wollten, dass sich die Seite modern anfühlt, aber gleichzeitig nicht zu kompliziert ist. Gerade für ältere Leute sollte es einfach sein - meine Oma zum Beispiel ist nicht so der Computer-Profi, und ich wollte, dass auch sie damit klarkommt.
+Ehrlich gesagt hab ich ziemlich viel Zeit ins Design gesteckt. Ich wollte, dass sich die Seite modern anfühlt, aber gleichzeitig nicht zu kompliziert ist. Gerade für ältere Leute sollte es einfach sein - meine Oma zum Beispiel ist nicht so der Computer-Profi, und ich wollte, dass auch sie damit klarkommt.
 
-Das Registrierungssystem ist schon ziemlich ausgereift. Du kannst dich anmelden, bekommst eine Bestätigungsmail, und das ganze Passwort-Zeug funktioniert auch. Wir haben sogar einen Passwort-Generator eingebaut, weil ich selbst immer zu faul bin, mir sichere Passwörter auszudenken. Und die Adresssuche mit OpenStreetMap war Angels Idee - funktioniert super, musst du nur anfangen zu tippen und die Vorschläge kommen automatisch.
+Das Registrierungssystem ist schon ziemlich ausgereift. Man kann sich anmelden, bekommt eine Bestätigungsmail, und das ganze Passwort-Zeug funktioniert auch. Ich hab sogar einen Passwort-Generator eingebaut, weil ich selbst immer zu faul bin, mir sichere Passwörter auszudenken. Und die Adresssuche mit OpenStreetMap hab ich auch integriert - funktioniert super, man muss nur anfangen zu tippen und die Vorschläge kommen automatisch.
 
-Was mir persönlich am besten gefällt, ist das Hilfe-System. Das war eigentlich meine Idee, weil ich gemerkt habe, dass viele Leute bei neuen Webseiten erstmal nicht wissen, wo sie anfangen sollen. Jetzt gibt es diesen kleinen blauen Button unten rechts, und wenn du draufklickst, führt dich das System Schritt für Schritt durch alles. Angel meinte zuerst, das sei vielleicht zu viel, aber ich glaube, gerade für unsere Zielgruppe in Grenchen ist das perfekt.
+Was mir persönlich am besten gefällt, ist das Hilfe-System. Das war eigentlich meine Idee, weil ich gemerkt hab, dass viele Leute bei neuen Webseiten erstmal nicht wissen, wo sie anfangen sollen. Jetzt gibt es diesen kleinen blauen Button unten rechts, und wenn man draufklickt, führt das System einen Schritt für Schritt durch alles. Ich glaube, gerade für die Zielgruppe in Grenchen ist das perfekt.
 
-Das Design haben wir bewusst hell und freundlich gehalten, mit diesem Glassmorphism-Effekt, den man gerade überall sieht. Sieht einfach gut aus, finde ich. Und natürlich funktioniert alles auch auf dem Handy - das war Angel wichtig, weil die meisten Leute heutzutage eh nur noch am Smartphone sind.
+Das Design hab ich bewusst hell und freundlich gehalten, mit diesem Glassmorphism-Effekt, den man gerade überall sieht. Sieht einfach gut aus, finde ich. Und natürlich funktioniert alles auch auf dem Handy - das war mir wichtig, weil die meisten Leute heutzutage eh nur noch am Smartphone sind.
 
 ### Was kommt noch?
 
-Wie gesagt, das Backend fehlt noch komplett. Also die ganze Logik für Events erstellen, Tickets verkaufen, Zahlungen abwickeln - das kommt alles noch. Im Moment ist es eher eine schöne Hülle, aber die Grundlage steht. Wir haben Laravel als Framework genommen, weil das einfach solide ist und wir damit später gut weiterbauen können.
+Wie gesagt, das Backend fehlt noch komplett. Also die ganze Logik für Events erstellen, Tickets verkaufen, Zahlungen abwickeln - das kommt alles noch. Im Moment ist es eher eine schöne Hülle, aber die Grundlage steht. Ich hab Laravel als Framework genommen, weil das einfach solide ist und ich damit später gut weiterbauen kann.
 
-Angel und ich arbeiten nebenbei daran, wenn wir Zeit haben. Es ist ein bisschen ein Lernprojekt für uns beide, aber wir ziehen es durch. Die Vision ist, dass Grenchen irgendwann seine eigene Ticketing-Plattform hat, wo lokale Veranstalter ihre Events einstellen können und die Leute aus der Region ihre Tickets kaufen können. Von Grenchen für Grenchen eben.
+Ich arbeite nebenbei daran, wenn ich Zeit hab. Es ist ein bisschen ein Lernprojekt für mich, aber ich zieh es durch. Die Vision ist, dass Grenchen irgendwann seine eigene Ticketing-Plattform hat, wo lokale Veranstalter ihre Events einstellen können und die Leute aus der Region ihre Tickets kaufen können. Von Grenchen für Grenchen eben.
 
 ---
 
@@ -259,14 +259,14 @@ Dieses Projekt ist unter der MIT-Lizenz lizenziert. Siehe [LICENSE](LICENSE) fü
 
 ## Wer steckt dahinter?
 
-Das Projekt ist eine Zusammenarbeit zwischen Angel und mir. Wir haben uns vorgenommen, Grenchen eine eigene Ticketing-Lösung zu geben, und arbeiten daran, wenn wir Zeit finden. Ist noch ein langer Weg, aber wir bleiben dran.
+Das Projekt hab ich gestartet, weil ich Grenchen eine eigene Ticketing-Lösung geben wollte. Ich arbeite daran, wenn ich Zeit hab. Ist noch ein langer Weg, aber ich bleib dran.
 
-Falls du Fragen hast, Ideen einbringen willst oder einfach mal quatschen möchtest über das Projekt, meld dich gerne bei Angel. Wir freuen uns immer über Feedback, gerade weil wir das Ganze ja für die Leute in Grenchen machen.
+Falls du Fragen hast, Ideen einbringen willst oder einfach mal quatschen möchtest über das Projekt, meld dich gerne bei Angel. Er ist meine Ansprechperson für dieses Projekt und kann dir weiterhelfen. Ich freu mich immer über Feedback, gerade weil ich das Ganze ja für die Leute in Grenchen mache.
 
 **Ansprechperson**: Angel
 **Projekt-Repository**: [https://github.com/TheRealDevCH/AngelTix4meProjektAbgabe](https://github.com/TheRealDevCH/AngelTix4meProjektAbgabe)
 
-Wie gesagt, im Moment ist hauptsächlich das Frontend fertig. Das Backend kommt noch, aber wir arbeiten daran. Rom wurde auch nicht an einem Tag erbaut, oder?
+Wie gesagt, im Moment ist hauptsächlich das Frontend fertig. Das Backend kommt noch, aber ich arbeite daran. Rom wurde auch nicht an einem Tag erbaut, oder?
 
 ---
 
