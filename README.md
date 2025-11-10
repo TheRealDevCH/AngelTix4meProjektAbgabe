@@ -26,7 +26,6 @@ Am Anfang wollt ich natürlich gleich alles machen - komplettes System mit Ticke
 
 ### Was ist bisher fertig?
 
-Hab ziemlich viel Zeit ins Design gesteckt muss ich sagen. Wollte das es modern aussieht aber trotzdem einfach zu bedienen ist. Meine Oma kommt mit Computern nicht so klar, und wenn die das versteht dann passts.
 
 Die Registrierung funktioniert schon ganz gut. Man kann sich anmelden, kriegt ne Mail zur Bestätigung, Passwort zurücksetzen geht auch. Hab sogar nen Passwort-Generator eingebaut weil ich selbst immer zu faul bin mir was auszudenken. Die Adresssuche mit OpenStreetMap läuft auch, einfach anfangen zu tippen und es kommen Vorschläge.
 
