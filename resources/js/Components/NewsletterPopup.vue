@@ -76,7 +76,7 @@ const subscribe = () => {
 
                         <div class="text-center mb-6">
                             <div class="inline-flex items-center justify-center mb-4">
-                                <img src="/images/tix4me.svg" alt="Tix4me Logo" class="h-20 w-auto" />
+                                <img src="/tix4me.svg" alt="Tix4me Logo" class="h-20 w-auto" />
                             </div>
                             <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                                 Verpasse keine Events mehr

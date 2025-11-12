@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { Link, usePage } from '@inertiajs/vue3';
+import CookieBanner from '@/Components/CookieBanner.vue';
 
 const showingNavigationDropdown = ref(false);
 const showUserMenu = ref(false);
@@ -63,7 +64,8 @@ if (localStorage.getItem('darkMode') === 'true') {
                                 </div>
                             </button>
 
-                                                        <div class="relative">
+                            <!-- User Menu -->
+                            <div class="relative">
                                 <button
                                     @click="showUserMenu = !showUserMenu"
                                     class="flex items-center space-x-3 px-4 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 border border-gray-200 dark:border-gray-700"
@@ -123,31 +125,40 @@ if (localStorage.getItem('darkMode') === 'true') {
                 </div>
             </nav>
 
-                        <main class="py-12">
+        
+            <main class="py-12">
                 <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <slot />
                 </div>
             </main>
 
-                        <footer class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 mt-auto">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-                    <div class="flex justify-center space-x-10 mb-6">
-                        <Link href="/impressum" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium">
+            
+            <footer class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 mt-auto">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+                    <div class="flex flex-wrap justify-center gap-4 sm:gap-0 sm:space-x-10 mb-6">
+                        <Link href="/impressum" class="text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium">
                             Impressum
                         </Link>
-                        <Link href="/datenschutz" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium">
+                        <Link href="/datenschutz" class="text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium">
                             Datenschutz
                         </Link>
-                        <Link href="/agbs" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium">
+                        <Link href="/agbs" class="text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium">
                             AGBs
                         </Link>
                     </div>
-                    <div class="text-center text-sm text-gray-600 dark:text-gray-400">
-                        © {{ new Date().getFullYear() }} Tix4me Ticketing. Alle Rechte vorbehalten.
+                    <div class="flex justify-center mb-6">
+                        <a href="https://www.grenchen.ch" target="_blank" rel="noopener noreferrer" class="transition-transform duration-200 hover:scale-105">
+                            <img src="/vongrenchenfuergrenchen.svg?v=2" alt="Von Grenchen für Grenchen" class="h-14 sm:h-16 md:h-20 w-auto">
+                        </a>
+                    </div>
+                    <div class="text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                        © {{ new Date().getFullYear() }} Tix4me. Alle Rechte vorbehalten.
                     </div>
                 </div>
             </footer>
         </div>
+
+        <CookieBanner />
     </div>
 </template>
 

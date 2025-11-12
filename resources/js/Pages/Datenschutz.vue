@@ -1,6 +1,8 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
+import HelpButton from '@/Components/HelpButton.vue';
+import CookieBanner from '@/Components/CookieBanner.vue';
 
 const darkMode = ref(false);
 
@@ -19,6 +21,29 @@ if (localStorage.getItem('darkMode') === 'true') {
     darkMode.value = true;
     document.documentElement.classList.add('dark');
 }
+
+const helpSteps = [
+    {
+        title: 'Datenschutzerklärung',
+        description: 'Die Datenschutzerklärung erklärt, wie wir Ihre persönlichen Daten sammeln, verwenden und schützen. Es ist wichtig, dass Sie diese Informationen lesen und verstehen.',
+        tips: 'Ihre Privatsphäre ist uns sehr wichtig. Wir behandeln Ihre Daten vertraulich.'
+    },
+    {
+        title: 'Welche Daten sammeln wir?',
+        description: 'In der Datenschutzerklärung finden Sie detaillierte Informationen darüber, welche Daten wir sammeln (z.B. Name, E-Mail, Adresse) und warum wir diese benötigen.',
+        tips: 'Wir sammeln nur Daten, die für den Betrieb der Website notwendig sind.'
+    },
+    {
+        title: 'Ihre Rechte',
+        description: 'Sie haben das Recht, Auskunft über Ihre gespeicherten Daten zu erhalten, diese zu korrigieren oder löschen zu lassen. Kontaktieren Sie uns dafür über die im Impressum angegebenen Kontaktdaten.',
+        tips: 'Sie können jederzeit Ihre Einwilligung zur Datenverarbeitung widerrufen.'
+    },
+    {
+        title: 'Cookies',
+        description: 'Wir verwenden Cookies, um die Website zu verbessern. Beim ersten Besuch werden Sie gefragt, ob Sie Cookies akzeptieren möchten. Sie können Ihre Einstellungen jederzeit ändern.',
+        tips: 'Cookies helfen uns, die Website benutzerfreundlicher zu gestalten.'
+    }
+];
 </script>
 
 <template>
@@ -28,14 +53,11 @@ if (localStorage.getItem('darkMode') === 'true') {
         <div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
             <nav class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex justify-between items-center h-20">
-                        <div class="flex items-center">
-                            <Link href="/">
-                                <img src="/tix4me.svg" alt="Tix4me Logo" class="h-10 w-auto">
-                            </Link>
-                        </div>
-
-                        </div>
+                    <div class="flex justify-center items-center h-20">
+                        <Link href="/">
+                            <img src="/tix4me.svg" alt="Tix4me Logo" class="h-12 w-auto">
+                        </Link>
+                    </div>
                 </div>
             </nav>
 
@@ -54,7 +76,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- §2 VERANTWORTLICHE STELLE -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§2 VERANTWORTLICHE STELLE</h2>
                             <div class="text-gray-700 dark:text-gray-300">
@@ -66,7 +88,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </div>
                         </section>
 
-                        
+                        <!-- §3 ANSPRECHPARTNER FÜR DATENSCHUTZ -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§3 ANSPRECHPARTNER FÜR DATENSCHUTZ</h2>
                             <p class="text-gray-700 dark:text-gray-300 mb-4">
@@ -80,7 +102,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </div>
                         </section>
 
-                        
+                        <!-- §4 GELTUNGSBEREICH -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§4 GELTUNGSBEREICH</h2>
                             <p class="text-gray-700 dark:text-gray-300">
@@ -88,7 +110,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- §5 ERHEBUNG UND NUTZUNG PERSONENBEZOGENER DATEN -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§5 ERHEBUNG UND NUTZUNG PERSONENBEZOGENER DATEN BEI DER NUTZUNG DER WEBSITE www.tix4me.ch</h2>
                             <p class="text-gray-700 dark:text-gray-300">
@@ -96,7 +118,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- §6 VERANSTALTERDATENSPEICHERUNG -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§6 VERANSTALTERDATENSPEICHERUNG UND VERWENDUNG</h2>
                             <p class="text-gray-700 dark:text-gray-300">
@@ -104,7 +126,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- §7 DATENERHEBUNG IM BESTELL-, KAUF-, ANMELDE-, UND AKKREDITIERUNGSPROZESS -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§7 DATENERHEBUNG, VERWENDUNG UND SPEICHERUNG IM BESTELL-, KAUF-, ANMELDE-, UND AKKREDITIERUNGSPROZESS</h2>
                             <p class="text-gray-700 dark:text-gray-300 mb-4">
@@ -141,7 +163,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- §8 DATENVERWENDUNG BEI SUPPORTFÄLLEN -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§8 DATENVERWENDUNG UND SPEICHERUNG BEI SUPPORTFÄLLEN UND ANDERWEITIGEN ANFRAGEN</h2>
                             <p class="text-gray-700 dark:text-gray-300">
@@ -149,7 +171,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- §9 DATENSICHERHEIT -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§9 DATENSICHERHEIT UND GEHEIMHALTUNG</h2>
                             <p class="text-gray-700 dark:text-gray-300 mb-4">
@@ -163,7 +185,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- §10 COOKIES -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§10 COOKIES UND ZUGRIFFSDATEN IN SERVER-LOGFILES</h2>
                             <p class="text-gray-700 dark:text-gray-300 mb-4">
@@ -174,7 +196,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- §11 TRACKING -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§11 Tracking</h2>
                             <p class="text-gray-700 dark:text-gray-300 mb-4">
@@ -197,7 +219,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- §12 HINWEISE ZU DATENÜBERMITTLUNGEN IN DIE USA -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§12 Hinweise zu Datenübermittlungen in die USA</h2>
                             <p class="text-gray-700 dark:text-gray-300 mb-4">
@@ -211,7 +233,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- §13 AUSKUNFTSRECHT -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§13 AUSKUNFTSRECHT, RECHT AUF VERGESSEN, RECHT AUF BERICHTIGUNG, WIDERSPRUCHSRECHT UND KONTAKTMÖGLICHKEIT</h2>
                             <p class="text-gray-700 dark:text-gray-300 mb-4">
@@ -225,7 +247,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- §14 DATENSICHERHEIT -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§14 Datensicherheit</h2>
                             <p class="text-gray-700 dark:text-gray-300 mb-4">
@@ -239,7 +261,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- §15 AUFBEWAHRUNG VON DATEN -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">§15 Aufbewahrung von Daten</h2>
                             <p class="text-gray-700 dark:text-gray-300 mb-4">
@@ -253,7 +275,7 @@ if (localStorage.getItem('darkMode') === 'true') {
                             </p>
                         </section>
 
-                        
+                        <!-- AKTUALITÄT UND ÄNDERUNG -->
                         <section class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">AKTUALITÄT UND ÄNDERUNG DER DATENSCHUTZERKLÄRUNG</h2>
                             <p class="text-gray-700 dark:text-gray-300">
@@ -264,26 +286,33 @@ if (localStorage.getItem('darkMode') === 'true') {
                 </div>
             </main>
 
-            
+            <!-- Footer -->
             <footer class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 mt-auto">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-                    <div class="flex justify-center space-x-10 mb-6">
-                        <Link href="/impressum" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+                    <div class="flex flex-wrap justify-center gap-4 sm:gap-0 sm:space-x-10 mb-6">
+                        <Link href="/impressum" class="text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium">
                             Impressum
                         </Link>
-                        <Link href="/datenschutz" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium">
+                        <Link href="/datenschutz" class="text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium">
                             Datenschutz
                         </Link>
-                        <Link href="/agbs" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium">
+                        <Link href="/agbs" class="text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium">
                             AGBs
                         </Link>
                     </div>
-                    <div class="text-center text-sm text-gray-600 dark:text-gray-400">
-                        © {{ new Date().getFullYear() }} Tix4me Ticketing. Alle Rechte vorbehalten.
+                    <div class="flex justify-center mb-6">
+                        <a href="https://www.grenchen.ch" target="_blank" rel="noopener noreferrer" class="transition-transform duration-200 hover:scale-105">
+                            <img src="/vongrenchenfuergrenchen.svg?v=2" alt="Von Grenchen für Grenchen" class="h-14 sm:h-16 md:h-20 w-auto">
+                        </a>
+                    </div>
+                    <div class="text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                        © {{ new Date().getFullYear() }} Tix4me. Alle Rechte vorbehalten.
                     </div>
                 </div>
             </footer>
         </div>
+
+        <HelpButton :steps="helpSteps" title="Datenschutz-Hilfe" />
+        <CookieBanner />
     </div>
 </template>
-
