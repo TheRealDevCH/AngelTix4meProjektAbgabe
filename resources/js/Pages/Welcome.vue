@@ -68,7 +68,7 @@ const helpSteps = [
     <Head title="Tix4me Ticketing" />
 
     <div :class="darkMode ? 'dark' : ''" class="min-h-screen transition-colors duration-300">
-        <div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+        <div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 pb-20 md:pb-0">
             <nav class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-center items-center h-20 relative">
@@ -76,16 +76,16 @@ const helpSteps = [
                             <img src="/tix4me.svg" alt="Tix4me Logo" class="h-10 sm:h-12 w-auto">
                         </Link>
 
-                        <div class="absolute right-0 flex items-center space-x-2 sm:space-x-6">
+                        <div class="hidden md:flex absolute right-0 items-center space-x-6">
                             <div v-if="user" class="relative">
                                 <button
                                     @click="showUserMenu = !showUserMenu"
-                                    class="flex items-center space-x-2 sm:space-x-3 px-2 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 border border-gray-200 dark:border-gray-700"
+                                    class="flex items-center space-x-3 px-4 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 border border-gray-200 dark:border-gray-700"
                                 >
-                                    <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-red-500 via-blue-500 to-green-500 flex items-center justify-center text-white font-semibold text-xs sm:text-sm">
+                                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-red-500 via-blue-500 to-green-500 flex items-center justify-center text-white font-semibold text-sm">
                                         {{ user.first_name.charAt(0) }}{{ user.last_name.charAt(0) }}
                                     </div>
-                                    <span class="hidden sm:inline text-gray-900 dark:text-gray-100 font-medium">
+                                    <span class="text-gray-900 dark:text-gray-100 font-medium">
                                         {{ user.first_name }} {{ user.last_name }}
                                     </span>
                                     <svg class="w-4 h-4 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,16 +131,16 @@ const helpSteps = [
                                 </div>
                             </div>
 
-                            <div v-else class="flex items-center space-x-2 sm:space-x-3">
+                            <div v-else class="flex items-center space-x-3">
                                 <Link
                                     :href="route('login')"
-                                    class="px-3 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-200 font-medium border border-gray-300 dark:border-gray-700"
+                                    class="px-5 py-2.5 text-base text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-200 font-medium border border-gray-300 dark:border-gray-700"
                                 >
                                     Anmelden
                                 </Link>
                                 <Link
                                     :href="route('register')"
-                                    class="px-3 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-200 font-medium border border-gray-300 dark:border-gray-700"
+                                    class="px-5 py-2.5 text-base text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-200 font-medium border border-gray-300 dark:border-gray-700"
                                 >
                                     Registrieren
                                 </Link>
@@ -216,6 +216,61 @@ const helpSteps = [
         <HelpButton :steps="helpSteps" title="Tix4me Hilfe" />
         <CookieBanner />
         <NewsletterPopup />
+
+        <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t border-gray-200 dark:border-gray-700 shadow-2xl z-40 pb-safe">
+            <div v-if="user" class="grid grid-cols-3 gap-2 p-3">
+                <Link
+                    href="/"
+                    class="flex flex-col items-center justify-center py-3 px-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
+                >
+                    <svg class="w-6 h-6 text-gray-700 dark:text-gray-300 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    </svg>
+                    <span class="text-xs font-medium text-gray-700 dark:text-gray-300">Home</span>
+                </Link>
+                <Link
+                    :href="route('profile.edit')"
+                    class="flex flex-col items-center justify-center py-3 px-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
+                >
+                    <svg class="w-6 h-6 text-gray-700 dark:text-gray-300 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    <span class="text-xs font-medium text-gray-700 dark:text-gray-300">Profil</span>
+                </Link>
+                <Link
+                    :href="route('logout')"
+                    method="post"
+                    as="button"
+                    class="flex flex-col items-center justify-center py-3 px-2 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 transition-all"
+                >
+                    <svg class="w-6 h-6 text-red-600 dark:text-red-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    </svg>
+                    <span class="text-xs font-medium text-red-600 dark:text-red-400">Abmelden</span>
+                </Link>
+            </div>
+
+            <div v-else class="grid grid-cols-2 gap-3 p-4">
+                <Link
+                    :href="route('login')"
+                    class="flex items-center justify-center py-3 px-4 text-base font-semibold text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-xl transition-all duration-200 border border-gray-300 dark:border-gray-700"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                    </svg>
+                    Anmelden
+                </Link>
+                <Link
+                    :href="route('register')"
+                    class="flex items-center justify-center py-3 px-4 text-base font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-xl transition-all duration-200 shadow-lg"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                    </svg>
+                    Registrieren
+                </Link>
+            </div>
+        </div>
     </div>
 </template>
 
